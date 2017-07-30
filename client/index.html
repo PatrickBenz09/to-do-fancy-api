@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    Halo gan
+
+
+
+    <!--
+      Below we include the Login Button social plugin. This button uses
+      the JavaScript SDK to present a graphical Login button that triggers
+      the FB.login() function when clicked.
+    -->
+
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div class ="container">
+      <form class="form-horizontal" id="manualLogin" action="#" method="post">
+        <div class="form-group">
+          <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-5">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-5">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-5">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <button id="fblogin" type="button" class="btn btn-primary">FB Login</button>
+
+    <div id="status"></div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        let $manualLogin = $('#manualLogin');
+
+        $manualLogin.submit(e => {
+          axios.post('http://localhost:3000/login', {
+            username: ,
+            password:
+          })
+          .then(result => {
+            //
+          })
+          .catch(err => {
+            //
+          })
+        })
+      })
+    </script>
+    <script src="js/loginFB.js"></script>
+  </body>
+</html>
