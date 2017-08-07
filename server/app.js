@@ -16,6 +16,7 @@ const login = require('./routers/login');
 const register = require('./routers/register');
 const user = require('./routers/user');
 const todo = require('./routers/todo');
+const fblogin = require('./routers/fblogin');
 
 app.use(bodyParser.urlencoded( { extended: true } ));
 app.use(bodyParser.json());
@@ -26,5 +27,6 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/user', user);
 app.use('/todo', todo);
+app.use('/fblogin', fblogin);
 
 app.listen(process.env.PORT || 3000);

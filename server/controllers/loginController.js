@@ -15,7 +15,12 @@ let login = (req, res) => {
       }, process.env.SECRET);
       req.headers.token = token;
       //console.log(req.headers);
-      res.send(token);
+      let data = {
+        token: token,
+        exist: true,
+        id: result._id
+      }
+      res.send(data);
     } else {
       res.send('Wrong Password!');
     }

@@ -40,5 +40,7 @@ List of To-Do routes:
 
 
 ### Don't Forget
-Use Postman/Insomnia or any kind of API development tools
+
+Use Postman/Insomnia or any kind of API development tools.
+
 After you clone this repo, create a .env file and fill it like the already made .env.template file.
